@@ -1,0 +1,25 @@
+.button {
+  width: 300px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 0.5rem;
+
+  background: transparent;
+  appearance: none;
+  color: #f7f9f9;
+
+  font: 600 0.9rem Poppins, sans-serif;
+
+  transform: scale(0.95);
+  transition: 0.3s;
+
+  &:hover {
+    filter: brightness(0.9);
+    transform: scale(1);
+  }
+}
