@@ -3,11 +3,18 @@ import styles from "./style.module.scss";
 import imgHomePage from "../../assets/HomePageImg.png";
 import iconLoginImg from "../../assets/LoginImage.jpg";
 import iconGoogle from "../../assets/Icons/IconGoogle.svg";
-import imgLogin from "../../assets/Icons/IconEnterLogin.png";
+import imgLogin from "../../assets/Icons/SetaParaDireita.png";
 
 import { Button } from "../../components/Button";
+import { useNavigate } from "react-router-dom";
 
 export function LoginPage() {
+  const navigate = useNavigate();
+
+  function goToHomePage() {
+    navigate("/home");
+  }
+
   return (
     <div className={styles.HomePageContainer}>
       <div className={styles.LoginPageAside}>
@@ -23,7 +30,7 @@ export function LoginPage() {
       <div className={styles.LoginPageContainer}>
         <img src={iconLoginImg} alt="Icones de Heróis" />
 
-        <Button>
+        <Button onClick={goToHomePage}>
           {" "}
           <img
             src={iconGoogle}
@@ -36,8 +43,7 @@ export function LoginPage() {
         <div className={styles.Divider}>ou</div>
         <div className={styles.LoginWithName}>
           <input type="text" placeholder="Digite o seu nome" />
-
-          <Button className={styles.LoginButton}>
+          <Button onClick={goToHomePage} className={styles.LoginButton}>
             <img src={imgLogin} alt="Seta para direita" />
           </Button>
         </div>
