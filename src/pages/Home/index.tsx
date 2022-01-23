@@ -41,7 +41,7 @@ export function Home() {
   }
 
   return (
-    <div>
+    <div className={styles.HomeContainer}>
       <header className={styles.HeaderContainer}>
         <div className={styles.Profile}>
           <img
@@ -72,7 +72,9 @@ export function Home() {
               src={`${characters.thumbnail.path}.${characters.thumbnail.extension}`}
               alt=""
             />
-            <Button className={styles.CardButton}>{characters.name}</Button>
+            <div className={styles.CardName}>
+              <span>{characters.name}</span>
+            </div>
           </div>
         ))}
       </div>
